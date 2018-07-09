@@ -1,5 +1,5 @@
 var board;
-var board_size = 00;
+var board_size = 300;
 var turn = 1;
 var win = 0;
 var moves = 0;
@@ -28,15 +28,6 @@ function draw(){
     line(2 * board_size/3, 0, 2 * board_size/3,board_size)
     line(0, board_size/3, board_size, board_size/3)
     line(0, 2 * board_size/3, board_size, 2 * board_size / 3)
-
-    fill(0, 0, 0);
-            rect(0, 0, board_size, board_size)
-            fill(255, 255, 255);
-            textSize(board_size / 14)
-            text("Player " + str(turn + 1) +" Won", board_size/6,board_size/3);
-
-            textSize(board_size / 14)
-            text("( Click to continue... )", (board_size/6) - board_size / 48, (board_size/3) + board_size / 6);
 }
 
 function mousePressed(){
@@ -57,8 +48,11 @@ function mousePressed(){
             fill(0, 0, 0);
             rect(0, 0, board_size, board_size)
             fill(255, 255, 255);
-            textSize(32)
+            textSize(board_size / 14)
             text("Player " + str(turn + 1) +" Won", board_size/6,board_size/3);
+
+            textSize(board_size / 14)
+            text("( Click to continue... )", (board_size/6) - board_size / 48, (board_size/3) + board_size / 6);
             result = 1;
         }
         else if(result = 1){
@@ -70,8 +64,12 @@ function mousePressed(){
             fill(0, 0, 0);
             rect(0, 0, board_size, board_size)
             fill(255, 255, 255);
-            textSize(32)
+            textSize(board_size / 14)
             text("Match Draw!", board_size/6,board_size/3);
+
+            textSize(board_size / 14)
+            text("( Click to continue... )", (board_size/6) - board_size / 48, (board_size/3) + board_size / 6);
+            
             result = 1;
         }
         else if(result = 1){
