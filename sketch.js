@@ -35,11 +35,13 @@ function mousePressed(){
         var pos = detectBox(mouseX, mouseY)
         if(pos){
             turn = 1 - turn;
-            board[pos[0] - 1][pos[1] - 1] = turn + 1;
-            drawMove(pos, turn);
-            moves++;
-            if(checkWin()){
-                win = 1;
+            if(board[pos[0] - 1][pos[1] - 1] == 0){
+                board[pos[0] - 1][pos[1] - 1] = turn + 1;
+                drawMove(pos, turn);
+                moves++;
+                if(checkWin()){
+                    win = 1;
+                }
             }
         }
     }
