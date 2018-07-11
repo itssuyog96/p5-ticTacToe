@@ -34,8 +34,8 @@ function mousePressed(){
     if(!win){
         var pos = detectBox(mouseX, mouseY)
         if(pos){
-            turn = 1 - turn;
             if(board[pos[0] - 1][pos[1] - 1] == 0){
+                turn = 1 - turn;
                 board[pos[0] - 1][pos[1] - 1] = turn + 1;
                 drawMove(pos, turn);
                 moves++;
